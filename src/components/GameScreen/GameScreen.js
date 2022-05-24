@@ -6,6 +6,18 @@ import { GameState } from '../../GameLogic';
 function GameScreen({ navigation }) {
 
     const [gameState, setGameState] = useState(new GameState("Captain"));
+    const [letterBank, setLetterBank] = useState(gameState.alphagram);
+    const [activeLetters, setActiveLetters] = useState("");
+
+    /** Pushes a character c onto the active word from the bank */
+    const pushLetter = (c) => {
+
+    };
+
+    /** Pops the last letter of the active word back into the bank */
+    const popLetter = () => {
+
+    };
 
     return (
         <View style={styles.gameScreen}>
