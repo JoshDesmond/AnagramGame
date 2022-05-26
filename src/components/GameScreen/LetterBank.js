@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 
 function LetterBank(props) {
 
-    console.log(props.letters);
+    const handleClick = (e) => {
+        console.log(e.target.innerText.toLowerCase());
+    };
 
-    let letterElements = props.letters.map((char) =>
-        <Button style={styles.bankButton} title={char} />
+    // Create button elements from props
+    let letterElements = props.letters.map((char, index) =>
+        <Button style={styles.bankButton}
+            key={index} // Note, this is considered dangerous, but since the alphagram is sorted it may be okay?
+            title={char}
+            onPress={handleClick} />
     );
-
-    console.log(letterElements);
 
     return (
         <View style={styles.letterBank}>

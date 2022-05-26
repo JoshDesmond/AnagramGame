@@ -4,8 +4,8 @@ export class GameState {
      * @param {String} word Word to guess
      */
     constructor(word) {
-        this.word = word;
-        this.alphagram = this.getAlphagram(word);
+        this.word = word.toLocaleLowerCase();
+        this.alphagram = this.getAlphagram(this.word);
     }
 
     getAlphagram(str) {
