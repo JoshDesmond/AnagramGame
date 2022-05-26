@@ -5,6 +5,7 @@ export class GameState {
      */
     constructor(word) {
         this.word = word.toLocaleLowerCase();
+        this.length = word.length;
         this.alphagram = this.getAlphagram(this.word);
     }
 
