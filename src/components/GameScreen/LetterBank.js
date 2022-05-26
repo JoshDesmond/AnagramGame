@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 function LetterBank(props) {
 
     const handleClick = (e) => {
-        console.log(e.target.innerText.toLowerCase());
+        const letter = e.target.innerText.toLowerCase();
+        props.activateFunction(letter);
     };
 
     // Create button elements from props
@@ -37,7 +38,8 @@ const styles = StyleSheet.create({
 });
 
 LetterBank.propTypes = {
-    letters: PropTypes.arrayOf(PropTypes.string)
+    letters: PropTypes.arrayOf(PropTypes.string),
+    activateFunction: PropTypes.func
 };
 
 export default LetterBank

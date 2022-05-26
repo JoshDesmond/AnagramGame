@@ -12,7 +12,7 @@ function GameScreen({ navigation }) {
 
     /** Pushes a character c onto the active word from the bank */
     const pushLetter = (c) => {
-
+        console.log(`Pushing ${c}!`);
     };
 
     /** Pops the last letter of the active word back into the bank */
@@ -24,7 +24,7 @@ function GameScreen({ navigation }) {
 
     return (
         <View style={styles.gameScreen}>
-            <LetterBank letters={letterBank}></LetterBank>
+            <LetterBank letters={letterBank} activateFunction={pushLetter}></LetterBank>
             <View>
                 <Text>{gameState.word}</Text>
             </View>
