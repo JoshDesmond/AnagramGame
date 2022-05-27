@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 function LetterBank(props) {
@@ -11,10 +11,11 @@ function LetterBank(props) {
 
     // Create button elements from props
     let letterElements = props.letters.map((char, index) =>
-        <Button style={styles.bankButton}
+        <TouchableOpacity style={styles.bankButton}
             key={index} // Note, this is considered dangerous, but since the alphagram is sorted it may be okay?
-            title={char}
-            onPress={handleClick} />
+            onPress={handleClick}>
+            <Text>{char}</Text>
+        </TouchableOpacity >
     );
 
     return (
@@ -26,14 +27,14 @@ function LetterBank(props) {
 
 const styles = StyleSheet.create({
     bankButton: {
-        display: 'inline-block',
-        height: '100%',
-        backgroundColor: 'blue',
+        backgroundColor: 'purple',
+        padding: '2em',
     },
     letterBank: {
         height: '100px',
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'center',
     },
 });
 
