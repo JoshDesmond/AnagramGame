@@ -5,6 +5,21 @@ import { GameState } from '../../GameLogic';
 import LetterBank from './LetterBank';
 import ActiveLetters from './ActiveLetters';
 
+/**
+ * Returns a copy of an array with an item removed
+ * @param {Array[*]} arr The array to remove an item from
+ * @param {*} value The value to remove
+ * @returns A copy of the array
+ */
+function removeItemOnce(arr, value) {
+    var index = arr.indexOf(value);
+    if (index > -1) {
+        arr.splice(index, 1);
+        console.log('removed!'); // TODO temp
+    }
+    return arr;
+}
+
 function GameScreen({ navigation }) {
 
     /** QUESTION: Does code here get re-run every state change? How do I avoid re-computing the length of the board */
@@ -17,6 +32,7 @@ function GameScreen({ navigation }) {
     const pushLetter = (c) => {
         if (!c) throw new TypeError(`Empty character pushed from letterbank,  ${c}`);
         console.log(`Pushing ${c}!`);
+        setLetterBank(removeItemOnce(letterBank, c));
     };
 
     /** Pops the last letter of the active word back into the bank */
@@ -30,7 +46,6 @@ function GameScreen({ navigation }) {
         <View style={styles.gameScreen}>
             <LetterBank letters={letterBank} activateFunction={pushLetter}></LetterBank>
             <View>
-                <Text>Active Zone</Text>
                 <ActiveLetters length={gameState.length} letters={activeLetters} deactivateFunction={popLetter}></ActiveLetters>
             </View>
         </View>

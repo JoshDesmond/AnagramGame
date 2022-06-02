@@ -14,7 +14,7 @@ function LetterBank(props) {
         <TouchableOpacity style={styles.bankButton}
             key={index} // Note, this is considered dangerous, but since the alphagram is sorted it may be okay?
             onPress={handleClick}>
-            <Text>{char}</Text>
+            <Text>{char.toUpperCase()}</Text>
         </TouchableOpacity >
     );
 
@@ -28,10 +28,17 @@ function LetterBank(props) {
 const styles = StyleSheet.create({
     bankButton: {
         backgroundColor: 'purple',
-        padding: '2em',
+        padding: '1em',
+        aspectRatio: '1/1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        border: 'solid black 2px',
+
     },
     letterBank: {
-        height: '100px',
+        margin: 'auto',
+        width: '90%',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',

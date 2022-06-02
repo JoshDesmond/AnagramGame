@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,33 +9,59 @@ const ActiveLetters = (props) => {
         props.deactivateFunction(letter);
     };
 
-
     const spaces = [];
     for (let i = 0; i < props.length; i++) {
         spaces.push(<View className='space' style={styles.emptySpace} key={i}></View>);
     }
 
-    
+    // Create active letter button elements from props
+    let letterElements = props.letters.map((char, index) =>
+        <TouchableOpacity style={styles.activeLetter}
+            key={index} // TODO, this is considered dangerous, it might not work!
+            onPress={handleClick}>
+            <Text>{char}</Text>
+        </TouchableOpacity >
+    );
+
+
     return (
-        <View style={styles.letterGrid}>
-            {spaces}
+        <View style={styles.stackedContainer}>
+            <Text>Active Zone</Text>
+            <View style={styles.letterGrid}>
+                {spaces}
+            </View>
+            <View style={styles.activeLettersGrid}>
+                {letterElements}
+            </View>
         </View>
     )
 }
 
+// TODO consider using stylesheet modules for writing normal CSS
 const styles = StyleSheet.create({
+    stackedContainer: {
+        // TODO grid doesn't work in react native
+        flexDirection: 'column',
+        justifyContent: 'center',
+        margin: 'auto',
+        backgroundColor: 'gray',
+    },
     letterGrid: {
-        display: 'flex',
         flexDirection: 'row',
-        flexWrap: 'nowrap',
-        justifyContent: 'space-between',
+    },
+    activeLettersGrid: {
+        flexDirection: 'row',
+        width: '100%',
+        backgroundColor: 'blue',
+        opacity: '30%',
     },
     emptySpace: {
-        display: 'inline-block',
-        height: '100%',
-        width: '2em',
-        margin: '10px',
+        aspectRatio: '1 / 1',
+        padding: '1em',
+        width: '3em',
         backgroundColor: 'black',
+        opacity: '50%',
+        border: 'solid red 2px',
     },
     activeLetter: {
         display: 'inline-block',
