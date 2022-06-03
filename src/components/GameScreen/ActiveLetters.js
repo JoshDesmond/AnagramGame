@@ -19,7 +19,7 @@ const ActiveLetters = (props) => {
         <TouchableOpacity style={styles.activeLetter}
             key={index} // TODO, this is considered dangerous, it might not work!
             onPress={handleClick}>
-            <Text>{char}</Text>
+            <Text>{char.toUpperCase()}</Text>
         </TouchableOpacity >
     );
 
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '100%',
         backgroundColor: 'blue',
-        opacity: '30%',
     },
     emptySpace: {
         aspectRatio: '1 / 1',
@@ -64,9 +63,16 @@ const styles = StyleSheet.create({
         border: 'solid red 2px',
     },
     activeLetter: {
-        display: 'inline-block',
         height: '100%',
-        backgroundColor: 'blue',
+        backgroundColor: 'purple',
+        padding: '1em',
+        width: '3em',
+        opacity: '90%',
+        aspectRatio: '1/1',
+        display: 'flex',
+        justifyContent: 'center',
+        alignContent: 'center',
+        border: 'solid black 2px',
     },
 });
 
