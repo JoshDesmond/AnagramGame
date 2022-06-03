@@ -26,19 +26,28 @@ function GameScreen({ navigation }) {
 
     const [gameState, setGameState] = useState(new GameState("Captain"));
     const [letterBank, setLetterBank] = useState(gameState.alphagram.split(''));
-    const [activeLetters, setActiveLetters] = useState([""]);
+    const [activeLetters, setActiveLetters] = useState(["d"]);
 
     /** Pushes a character c onto the active word from the bank */
     const pushLetter = (c) => {
         if (!c) throw new TypeError(`Empty character pushed from letterbank,  ${c}`);
         console.log(`Pushing ${c}!`);
-        setLetterBank(removeItemOnce(letterBank, c));
-    };
+        setLetterBank((list) => {
+            const index = letterBank.indexOf(c);
+            return [
+                ...list.slice(0, index),
+                ...list.slice(index + 1, list.length)
+            ];
+        });
+        setActiveLetters((list) => [...list, c]);
+    }
 
     /** Pops the last letter of the active word back into the bank */
     const popLetter = (c) => {
         if (!c) throw new TypeError(`Empty character popped from active play, ${c}`);
         console.log(`Popping back ${c}!`);
+        setLetterBank((list) => [...list, c]);
+        // TODO pop from active stack
     };
 
 
