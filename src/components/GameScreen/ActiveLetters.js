@@ -61,8 +61,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         opacity: '50%',
         border: 'solid red 2px',
+        zIndex: '0',
     },
     activeLetter: {
+        position: 'relative',
+        top: '-3em',
         height: '100%',
         backgroundColor: 'purple',
         padding: '1em',
@@ -73,6 +76,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         border: 'solid black 2px',
+        zIndex: '2',
     },
 });
 

@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     bankButton: {
         backgroundColor: 'purple',
         padding: '1em',
-        aspectRatio: '1/1',
+        width: '3em',
+        aspectRatio: '1 / 1',
         display: 'flex',
         justifyContent: 'center',
         alignContent: 'center',
