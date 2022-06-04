@@ -1,0 +1,15 @@
+{
+  "name": "anagram-backend",
+  "version": "1.0.0",
+  "description": "A backend for the daily anagram app",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --experimental-json-modules ./server.js"
+  },
+  "author": "Desmond",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
