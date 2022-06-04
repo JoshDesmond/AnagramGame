@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GameState } from '../../GameLogic';
 import LetterBank from './LetterBank';
 import ActiveLetters from './ActiveLetters';
@@ -40,6 +40,22 @@ function GameScreen({ navigation }) {
             ];
         });
     };
+
+    useEffect(() => {
+        if (activeLetters.length === gameState.length) {
+            // A full guess is entered
+            if (gameState.checkWord(activeLetters.join(''))) {
+                setTimeout(() => {
+                    alert("Win!");
+                }, 300);
+            } else {
+                alert("No :(");
+            }
+        }
+
+
+
+    }, [activeLetters]);
 
 
     return (

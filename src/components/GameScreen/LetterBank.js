@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         border: 'solid black 2px',
-
     },
     letterBank: {
         margin: 'auto',
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
+        gap: '2px',
     },
 });
 
