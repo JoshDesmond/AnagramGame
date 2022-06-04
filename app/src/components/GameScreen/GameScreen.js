@@ -9,7 +9,7 @@ function GameScreen({ navigation }) {
 
     /** QUESTION: Does code here get re-run every state change? How do I avoid re-computing the length of the board */
 
-    const [gameState, setGameState] = useState(new GameState("Captain"));
+    const [gameState, setGameState] = useState(new GameState());
     const [letterBank, setLetterBank] = useState(gameState.alphagram.split(''));
     const [activeLetters, setActiveLetters] = useState([]);
 

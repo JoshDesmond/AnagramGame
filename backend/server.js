@@ -2,7 +2,8 @@ import json from './data.json' assert { type: 'json' };
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = 31843;
+// TODO support CORS
 
 app.get('/', (req, res) => {
     res.send(json[0]);
