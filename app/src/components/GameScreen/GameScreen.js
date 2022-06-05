@@ -5,12 +5,10 @@ import { GameState } from '../../GameLogic';
 import LetterBank from './LetterBank';
 import ActiveLetters from './ActiveLetters';
 
-function GameScreen({ navigation }) {
+function GameScreen({ route, navigation }) {
 
-    /** QUESTION: Does code here get re-run every state change? How do I avoid re-computing the length of the board */
-
-    const [gameState, setGameState] = useState(new GameState());
-    const [letterBank, setLetterBank] = useState(gameState.alphagram.split(''));
+    const [gameState, setGameState] = useState(route.params.gameState);
+    const [letterBank, setLetterBank] = useState(route.params.gameState.alphagram.split(''));
     const [activeLetters, setActiveLetters] = useState([]);
 
     /** Pushes a character c onto the active word from the bank */

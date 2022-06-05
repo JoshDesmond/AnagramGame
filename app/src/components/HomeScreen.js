@@ -2,12 +2,22 @@ import React from 'react'
 
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { GameState } from '../GameLogic';
 
 function HomeScreen({ navigation }) {
 
+    let gameState;
+
+    GameState.fetchGameState().then((data) => {
+        console.log(data);
+        gameState = data;
+    });
+
     const onPressStart = () => {
-        console.log("Hello");
-        navigation.navigate('Game');
+        console.log(`gameState.word: ${gameState}`);
+        navigation.navigate('Game', {
+            gameState: gameState,
+        });
     };
 
     return (

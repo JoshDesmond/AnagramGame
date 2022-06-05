@@ -8,13 +8,17 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Game">
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={HomeScreen}
           options={{ title: 'Welcome' }}
         />
-        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen
+          name="Game"
+          component={GameScreen}
+          options={{ title: 'Anagram Challenge' }}
+        />
       </Stack.Navigator>
 
     </NavigationContainer>

@@ -1,13 +1,9 @@
 export class GameState {
 
-    fetchWord() {
-        return fetch('localhost:31843/')
+    static fetchWord() {
+        return fetch('http://localhost:31843/')
             .then((response) => {
-                console.log(response); // TODO temp
-                return response.json();
-            })
-            .then((json) => {
-                return json;
+                return response.text();
             })
             .catch((error) => {
                 console.error(error);
@@ -16,16 +12,24 @@ export class GameState {
 
     /**
      * Creates a new empty game state
+     * @param {string} word The word of this game instance
+     * @private
      */
-    constructor() {
-        this.word = "Hello";
-        this.length = this.word.length;
+    constructor(word) {
+        if (!word) {
+            throw new TypeError(`GameLogic Constructed without word`);
+        }
+        this.word = word.toLocaleLowerCase();
+        this.length = word.length;
         this.alphagram = this.getAlphagram(this.word);
-        this.fetchWord().then((word) => {
-            this.word = word.toLocaleLowerCase();
-            this.length = word.length;
-            this.alphagram = this.getAlphagram(this.word);
-        });
+    }
+
+    /**
+     * Factory constructor for a new gamestate
+     */
+    static async fetchGameState() {
+        const word = await this.fetchWord();
+        return new GameState(word);
     }
 
     getAlphagram(str) {
