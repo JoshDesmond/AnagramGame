@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
     gameScreen: {
         flexDirection: 'column',
     },
-
 });
 
 export default GameScreen

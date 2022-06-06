@@ -1,0 +1,41 @@
+/* Color Theme Swatches in Hex */
+.Roots-Vibes-1-hex { color: #010440; }
+.Roots-Vibes-2-hex { color: #3B9ABF; }
+.Roots-Vibes-3-hex { color: #21BFA2; }
+.Roots-Vibes-4-hex { color: #F29829; }
+.Roots-Vibes-5-hex { color: #F25116; }
+
+/* Color Theme Swatches in RGBA */
+.Roots-Vibes-1-rgba { color: rgba(1, 4, 64, 1); }
+.Roots-Vibes-2-rgba { color: rgba(59, 154, 191, 1); }
+.Roots-Vibes-3-rgba { color: rgba(33, 191, 162, 1); }
+.Roots-Vibes-4-rgba { color: rgba(242, 152, 41, 1); }
+.Roots-Vibes-5-rgba { color: rgba(242, 81, 22, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Roots-Vibes-1-hsla { color: hsla(237, 96, 12, 1); }
+.Roots-Vibes-2-hsla { color: hsla(196, 52, 49, 1); }
+.Roots-Vibes-3-hsla { color: hsla(168, 70, 43, 1); }
+.Roots-Vibes-4-hsla { color: hsla(33, 88, 55, 1); }
+.Roots-Vibes-5-hsla { color: hsla(16, 89, 51, 1); }
+
+
+.bankButton {
+    background-color: 'purple';
+    padding: '1em';
+    width: '3em';
+    aspect-ratio: '1 / 1';
+    display: 'flex';
+    justify-content: 'center';
+    align-content: 'center';
+    border: 'solid black 2px';
+}
+
+.letterBank {
+    margin: 'auto';
+    width: '90%';
+    display: 'flex';
+    flex-direction: 'row';
+    justify-content: 'center';
+    gap: '2px';
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import styles from './Game.style.js';
 
 function LetterBank(props) {
 
@@ -25,7 +26,7 @@ function LetterBank(props) {
     );
 }
 
-const styles = StyleSheet.create({
+const styles_OLD = StyleSheet.create({
     bankButton: {
         backgroundColor: 'purple',
         padding: '1em',

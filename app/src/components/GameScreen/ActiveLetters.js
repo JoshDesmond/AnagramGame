@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Game.style.js';
 
 const ActiveLetters = (props) => {
 
@@ -38,7 +39,7 @@ const ActiveLetters = (props) => {
 }
 
 // TODO consider using stylesheet modules for writing normal CSS
-const styles = StyleSheet.create({
+const styles_OLD = StyleSheet.create({
     stackedContainer: {
         // TODO grid doesn't work in react native
         flexDirection: 'column',
