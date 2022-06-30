@@ -1,3 +1,5 @@
+import { StyleSheet } from 'react-native';
+
 /* Color Theme Swatches in Hex */
 .Roots-Vibes-1-hex { color: #010440; }
 .Roots-Vibes-2-hex { color: #3B9ABF; }

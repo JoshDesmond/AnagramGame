@@ -1,3 +1,4 @@
+import { StyleSheet } from 'react-native';
 
 /* Color Theme Swatches in RGBA
 .Roots-Vibes-1-rgba { color: rgba(1, 4, 64, 1); }
