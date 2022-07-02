@@ -7,6 +7,7 @@ export class GameState {
             })
             .catch((error) => {
                 console.error(error);
+                return "singing";
             });
     }
 

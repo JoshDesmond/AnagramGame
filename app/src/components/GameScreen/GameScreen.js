@@ -26,17 +26,18 @@ function GameScreen({ route, navigation }) {
     }
 
     /** Pops the last letter of the active word back into the bank */
-    const popLetter = (c) => {
-        if (!c) throw new TypeError(`Empty character popped from active play, ${c}`);
-        console.log(`Popping back ${c}!`);
-        setLetterBank((list) => [...list, c].sort());
+    const popIndex = (i) => {
+        if (0 > i || i >= gameState.length) throw new TypeError(`Illegal index popped from active play, ${i}`);
+        console.log(`Popping back index ${i}!`);
+
+        const c = activeLetters[i];
         setActiveLetters((list) => {
-            const index = list.indexOf(c);
             return [
-                ...list.slice(0, index),
-                ...list.slice(index + 1, list.length)
+                ...list.slice(0, i),
+                ...list.slice(i + 1, list.length)
             ];
         });
+        setLetterBank((list) => [...list, c].sort());
     };
 
     useEffect(() => {
@@ -60,7 +61,7 @@ function GameScreen({ route, navigation }) {
         <View style={styles.gameScreen}>
             <LetterBank letters={letterBank} activateFunction={pushLetter}></LetterBank>
             <View>
-                <ActiveLetters length={gameState.length} letters={activeLetters} deactivateFunction={popLetter}></ActiveLetters>
+                <ActiveLetters length={gameState.length} letters={activeLetters} deactivateFunction={popIndex}></ActiveLetters>
             </View>
         </View>
     )

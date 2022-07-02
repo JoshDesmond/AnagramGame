@@ -5,9 +5,14 @@ import styles from './Game.style.js';
 
 const ActiveLetters = (props) => {
 
-    const handleClick = (e) => {
+    const handleClick = index => (e) => {
+        // TODO get index of click
+        console.log(index);
+        console.log(e.target);
+        console.log(e.target.getAttribute("data-index"));
+        console.log(e.currentTarget.dataset.index);
         const letter = e.target.innerText.toLowerCase();
-        props.deactivateFunction(letter);
+        props.deactivateFunction(index);
     };
 
     const spaces = [];
@@ -19,7 +24,8 @@ const ActiveLetters = (props) => {
     let letterElements = props.letters.map((char, index) =>
         <TouchableOpacity style={styles.activeLetter}
             key={index} // TODO, this is considered dangerous, it might not work!
-            onPress={handleClick}>
+            onPress={handleClick(index)}
+            data-index={index}>
             <Text>{char.toUpperCase()}</Text>
         </TouchableOpacity >
     );
