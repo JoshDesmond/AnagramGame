@@ -9,7 +9,8 @@ import { StyleSheet } from 'react-native';
 */
 
 export default StyleSheet.create({
-    bankButton: {
+    letterButton: {
+        height: '100%',
         backgroundColor: 'purple',
         padding: '1em',
         width: '3em',
@@ -18,6 +19,15 @@ export default StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center',
         border: 'solid black 2px',
+        zIndex: '2',
+    },
+    letterText: {
+		height: '100%',
+		width: '100%',
+        fontFamily: 'monaco, Consolas, Lucida Console, monospace',
+        fontSize: '3vw',
+        fontWeight: '700',
+		textAlign: 'center',
     },
     letterBank: {
         margin: 'auto',
@@ -54,18 +64,5 @@ export default StyleSheet.create({
         zIndex: '0',
         margin: '1px',
     },
-    activeLetter: {
-        height: '100%',
-        backgroundColor: 'purple',
-        padding: '1em',
-        width: '3em',
-        opacity: '90%',
-        aspectRatio: '1/1',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        border: 'solid black 2px',
-        zIndex: '2',
-        margin: '1px',
-    },
+    
 });

@@ -12,10 +12,10 @@ function LetterBank(props) {
 
     // Create button elements from props
     let letterElements = props.letters.map((char, index) =>
-        <TouchableOpacity style={styles.bankButton}
+        <TouchableOpacity style={styles.letterButton}
             key={index} // Note, this is considered dangerous, but since the alphagram is sorted it may be okay?
             onPress={handleClick}>
-            <Text>{char.toUpperCase()}</Text>
+            <Text style={styles.letterText}>{char.toUpperCase()}</Text>
         </TouchableOpacity >
     );
 

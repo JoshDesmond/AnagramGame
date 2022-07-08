@@ -22,11 +22,11 @@ const ActiveLetters = (props) => {
 
     // Create active letter button elements from props
     let letterElements = props.letters.map((char, index) =>
-        <TouchableOpacity style={styles.activeLetter}
+        <TouchableOpacity style={styles.letterButton}
             key={index} // TODO, this is considered dangerous, it might not work!
             onPress={handleClick(index)}
             data-index={index}>
-            <Text>{char.toUpperCase()}</Text>
+            <Text style={styles.letterText}>{char.toUpperCase()}</Text>
         </TouchableOpacity >
     );
 
