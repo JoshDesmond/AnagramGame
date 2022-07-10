@@ -66,6 +66,7 @@ function GameScreen({ route, navigation }) {
 
 const styles = StyleSheet.create({
     gameScreen: {
+        paddingTop: '3em',
         flexDirection: 'column',
     },
 });

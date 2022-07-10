@@ -26,7 +26,7 @@ export default StyleSheet.create({
         height: '100%',
         width: '100%',
         fontFamily: 'monaco, Consolas, Lucida Console, monospace',
-        fontSize: '16',
+        fontSize: '20',
         fontWeight: '700',
         textAlign: 'center',
     },
@@ -40,12 +40,12 @@ export default StyleSheet.create({
     },
     // CSS for Active Letters: 
     stackedContainer: {
+        paddingTop: '1.5em',
         flexDirection: 'column',
         justifyContent: 'center',
         margin: 'auto',
-        backgroundColor: 'gray',
     },
-    letterGrid: {
+    emptyLetterGrid: {
         flexDirection: 'row',
     },
     activeLettersGrid: {

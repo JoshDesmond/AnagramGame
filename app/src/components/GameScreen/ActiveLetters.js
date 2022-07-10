@@ -33,7 +33,7 @@ const ActiveLetters = (props) => {
     return (
         <View style={styles.stackedContainer}>
             <Text>Active Zone</Text>
-            <View style={styles.letterGrid}>
+            <View style={styles.emptyLetterGrid}>
                 {spaces}
             </View>
             <View style={styles.activeLettersGrid}>
