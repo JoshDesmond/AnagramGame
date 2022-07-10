@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './Game.style.js';
 
@@ -25,27 +25,6 @@ function LetterBank(props) {
         </View>
     );
 }
-
-const styles_OLD = StyleSheet.create({
-    bankButton: {
-        backgroundColor: 'purple',
-        padding: '1em',
-        width: '3em',
-        aspectRatio: '1 / 1',
-        display: 'flex',
-        justifyContent: 'center',
-        alignContent: 'center',
-        border: 'solid black 2px',
-    },
-    letterBank: {
-        margin: 'auto',
-        width: '90%',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        gap: '2px',
-    },
-});
 
 LetterBank.propTypes = {
     letters: PropTypes.arrayOf(PropTypes.string),

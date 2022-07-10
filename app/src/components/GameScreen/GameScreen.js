@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import { GameState } from '../../GameLogic';
 import LetterBank from './LetterBank';
@@ -51,9 +51,6 @@ function GameScreen({ route, navigation }) {
                 alert("No :(");
             }
         }
-
-
-
     }, [activeLetters]);
 
 

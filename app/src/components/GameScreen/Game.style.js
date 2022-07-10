@@ -8,6 +8,7 @@ import { StyleSheet } from 'react-native';
 .Roots-Vibes-5-rgba { color: rgba(242, 81, 22, 1); }
 */
 
+
 export default StyleSheet.create({
     letterButton: {
         height: '100%',
@@ -22,12 +23,12 @@ export default StyleSheet.create({
         zIndex: '2',
     },
     letterText: {
-		height: '100%',
-		width: '100%',
+        height: '100%',
+        width: '100%',
         fontFamily: 'monaco, Consolas, Lucida Console, monospace',
-        fontSize: '3vw',
+        fontSize: '16',
         fontWeight: '700',
-		textAlign: 'center',
+        textAlign: 'center',
     },
     letterBank: {
         margin: 'auto',
