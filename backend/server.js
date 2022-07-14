@@ -1,5 +1,6 @@
-import json from './data.json' assert { type: 'json' };
+import json from './words.json' assert { type: 'json' };
 import express from 'express';
+import { Temporal } from '@js-temporal/polyfill';
 import cors from 'cors';
 
 var corsOptions = {
@@ -10,9 +11,21 @@ const app = express();
 const port = 31843;
 
 app.get('/', cors(corsOptions), (req, res) => {
-    res.send(json[0]);
+    let index = calculateWordNumber(); 
+    res.send(json[index]);
 });
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
+
+// Date logic
+const startDate = Temporal.PlainDate.from({year: 2022, month: 7, day: 13});
+
+/**
+ * Returns a word index number
+ */
+function calculateWordNumber() {
+    const nowDate = Temporal.Now.plainDateISO();
+    return nowDate.since(startDate, {largestUnit: "day"}).days;
+}
