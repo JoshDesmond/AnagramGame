@@ -6,11 +6,6 @@ import styles from './Game.style.js';
 const ActiveLetters = (props) => {
 
     const handleClick = index => (e) => {
-        // TODO get index of click
-        console.log(index);
-        console.log(e.target);
-        console.log(e.target.getAttribute("data-index"));
-        console.log(e.currentTarget.dataset.index);
         props.deactivateFunction(index);
     };
 

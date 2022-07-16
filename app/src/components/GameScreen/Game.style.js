@@ -9,12 +9,13 @@ import { StyleSheet } from 'react-native';
 */
 
 
+
 export default StyleSheet.create({
     letterButton: {
         height: '100%',
-        backgroundColor: 'purple',
+        backgroundColor: 'white',
         padding: '1em',
-        width: '3em',
+        width: '3rem',
         aspectRatio: '1 / 1',
         display: 'flex',
         justifyContent: 'center',
@@ -23,11 +24,9 @@ export default StyleSheet.create({
         zIndex: '2',
     },
     letterText: {
-        height: '100%',
-        width: '100%',
         fontFamily: 'monaco, Consolas, Lucida Console, monospace',
-        fontSize: '20',
-        fontWeight: '700',
+        fontSize: '1.5rem',
+        fontWeight: '600',
         textAlign: 'center',
     },
     letterBank: {
@@ -47,6 +46,7 @@ export default StyleSheet.create({
     },
     emptyLetterGrid: {
         flexDirection: 'row',
+        gap: '2px',
     },
     activeLettersGrid: {
         flexDirection: 'row',
@@ -54,16 +54,14 @@ export default StyleSheet.create({
         position: 'relative',
         top: '-3em',
         botton: '-3em',
+        gap: '2px',
     },
     emptySpace: {
         aspectRatio: '1 / 1',
         padding: '1em',
         width: '3em',
-        backgroundColor: 'black',
-        opacity: '50%',
-        border: 'solid red 2px',
+        backgroundColor: 'gray',
         zIndex: '0',
-        margin: '1px',
     },
     
 });
