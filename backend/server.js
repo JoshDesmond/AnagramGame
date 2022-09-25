@@ -20,7 +20,7 @@ app.listen(port, () => {
 });
 
 // Date logic
-const startDate = Temporal.PlainDate.from({year: 2022, month: 7, day: 13});
+const startDate = Temporal.PlainDate.from({year: 2022, month: 8, day: 3});
 
 /**
  * Returns a word index number
