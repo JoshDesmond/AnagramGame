@@ -25,7 +25,7 @@ export default StyleSheet.create({
     },
     letterText: {
         fontFamily: 'monaco, Consolas, Lucida Console, monospace',
-        fontSize: '1.5rem',
+        fontSize: '1.5',
         fontWeight: '600',
         textAlign: 'center',
     },
